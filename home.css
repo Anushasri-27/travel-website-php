@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
+
+}
+.btn-a{
+    text-decoration: none;
+    display: block;
 }
 
 .card-item{
@@ -26,10 +30,7 @@
     font-family: 'Great Vibes', cursive;
     width: 100%;
 }
-.form-text{
-    color:rgb(34, 18, 155);
-    text-align: center;
-}
+
 .container{
     margin: auto;
     padding: 40px;

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./painting-jungle-scene-with-green-plant-green-leafy-plant.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+}
+
+.container{
+    height: fit-content;
+    
+}
+.msg-box{
+    background: linear-gradient(rgba(137, 137, 74, 0.897),rgba(76, 121, 41, 0.848));
+}
