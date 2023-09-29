@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Tingle</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
+    <!--tailwind cdn -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ole&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="body">
+    <div
+      class="container text-center mx-auto px-10 data-tilt data-tilt-axis='x'"
+    >
+      <div class="title">
+        <span class="img-span"
+          ><img class="icon" src="./winter_2283408.png"
+        /></span>
+        <p class="title-text font-serif text-5xl antialiased font-extrabold">
+          Travel Tingle
+        </p>
+      </div>
+
+      <div class="form w-1/2">
+        <form
+          action="home.php"
+          method="post"
+          class="form-body flex flex-col gap-y-2 flex-wrap bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <input
+            class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-zinc-950 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter Name"
+          />
+          <input
+            class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-zinc-950 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            type="text"
+            name="age"
+            id="age"
+            placeholder="Enter Age"
+          />
+          <input
+            class="bg-blue-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-zinc-950 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            type="text"
+            name="gender"
+            id="gender"
+            placeholder="Enter Gender"
+          />
+          <input
+            class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-zinc-950 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Email"
+          />
+          <input
+            class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-zinc-950 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            type="phone"
+            name="phone"
+            id="phone"
+            placeholder="Enter phone Number"
+          />
+          <textarea
+            class="bg-blue-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-zinc-950 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            name="desc"
+            id="desc"
+            cols="30"
+            rows="10"
+            placeholder="Enter Your Query"
+          >
+          </textarea>
+          <button
+            class="btn shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          >
+            submit
+          </button>
+        </form>
+      </div>
+      <p class="text-white font-bold">SignIn to Continue</p>
+    </div>
+    <script src="index.js"></script>
+    <!--vanila-tilt-->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+    ></script>
+    <!--vanila tilt logic-->
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".icon"), {
+        max: 20,
+        speed: 400,
+        glare: true,
+      });
+      VanillaTilt.init(document.querySelectorAll(".body"), {
+        max: 5,
+        speed: 2000,
+        glare: true,
+      });
+    </script>
+  </body>
+</html>

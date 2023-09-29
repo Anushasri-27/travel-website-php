@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+.card-item{
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+.select-pack{
+    text-align: center;
+    font-size: 60px;
+    color: whitesmoke;
+    text-shadow:1px 1px 10px rgb(199, 13, 232);
+    font-family: 'Ole', cursive;
+}
+.user-msg{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(11, 2, 2);
+    text-shadow:1px 1px 10px rgb(86, 95, 39);
+    font-family: 'Great Vibes', cursive;
+    width: 100%;
+}
+.form-text{
+    color:rgb(34, 18, 155);
+    text-align: center;
+}
+.container{
+    margin: auto;
+    padding: 40px;
+    width: 100wh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1PX 1PX 10PX;
+    margin-bottom: 10px;
+    background: linear-gradient(rgba(137, 137, 74, 0.897),rgba(76, 121, 41, 0.848));
+
+}
+
+.card-item{
+    height: fit-content;
+}
