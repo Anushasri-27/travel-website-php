@@ -10,14 +10,14 @@ if (isset($_POST['name'])) {
         mysqli_connect_error();
     }
 
-  
+    $pack_price= " ";
     $name = $_POST['name'];
     $fname = $_POST['fname'];
     $mop = $_POST['mop'];
     $nop = $_POST['nop'];
     $pack = $_POST['pack'];
     $nod = $_POST['nod'];
-    $bill = (5000 * $nop) + (500 * $nod);
+   
     $sql = "INSERT INTO `trip`.`book` (`name`,`fname`,`mode_of_payment`,`no_of_people`,`package`,`no_of_days`,`dt`) VALUES ('$name','$fname','$mop','$nop','$pack','$nop', current_timestamp());";
 
 
@@ -26,6 +26,29 @@ if (isset($_POST['name'])) {
         echo "ERROR : $sql <br> $con->error";
     }
 
+    $result = "SELECT pack_name ,price FROM `trip`.`pack_price`";
+    $result2 = $con->query($result);
+    if ($result2->num_rows > 0) {
+        // output data of each row
+        while($row = $result2->fetch_assoc()) {
+            if($row["pack_name"]==$pack){
+                $pack_price=$row["price"];
+            }
+        }
+      } else {
+        echo "0 results";
+      }
+     $bill = ($pack_price * $nop) + (500 * $nod);
+     $sql_bil = "INSERT INTO `trip`.`bill` (`name`,`bill`) VALUES ('$name','$bill');";
+     
+    if (!$con->query($sql_bil) == true) {
+
+        echo "ERROR : $sql <br> $con->error";
+    }else{
+        echo "inserted";
+    }
+
+    
     $con->close();
 }
 ?>
@@ -65,10 +88,11 @@ if (isset($_POST['name'])) {
                 echo "Name of package :   ";
                 echo $pack;
                 echo "<br>";
-                $bill = (5000 * $nop) + (500 * $nod);
+                echo "basic fee for per person for  ",$pack,"  is: ",$pack_price , "<br>";
 
-                echo "your total bill is :  Rs ";
-                echo $bill;
+
+                echo "your total bill is :  Rs " ,$bill;
+                
                 ?>
                 <br>
                 <p>Soon our executive will provide you all the details , ticket , stay  related information on the mail Id </p>
