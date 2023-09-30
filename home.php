@@ -1,32 +1,32 @@
 <?php
-if (isset($_POST['name'])) {
-   $server = "localhost";
-   $username = "root";
-   $password = "";
-   $con = mysqli_connect($server, $username, $password);
 
-   if (!$con) {
-      die("connection to this databse failed due to : ");
-      mysqli_connect_error();
-   }
+$server = "localhost";
+$username = "root";
+$password = " ";
+$db = "trip";
+$con = mysqli_connect($server, $username, $password, $db);
 
-   $name = $_POST['name'];
-   $gender = $_POST['gender'];
-   $age = $_POST['age'];
-   $email = $_POST['email'];
-   $phone = $_POST['phone'];
-   $desc = $_POST['desc'];
-
-   $sql = "INSERT INTO `trip`.`trip` (`name`,`age`,`gender`,`email`,`phone`,`other`,`dt`) VALUES ('$name','$age','$gender','$email','$phone','$desc', current_timestamp());";
-
-
-   if (!$con->query($sql) == true) {
-
-      echo "ERROR : $sql <br> $con->error";
-   }
-
-   $con->close();
+if (!$con) {
+   die("connection to this databse failed due to : " . mysqli_connect_error());
 }
+
+$name = $_POST['name'];
+$gender = $_POST['gender'];
+$age = $_POST['age'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$desc = $_POST['desc'];
+
+$sql = "INSERT INTO `trip` (`name`,`age`,`gender`,`email`,`phone`,`other`,`dt`) VALUES ('$name','$age','$gender','$email','$phone','$desc', current_timestamp());";
+
+
+if (!$con->query($sql) == true) {
+
+   echo "ERROR : $sql <br> $con->error";
+}
+
+$con->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@ if (isset($_POST['name'])) {
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> Home | <?php echo $name; ?></title>
+   <title> Home </title>
    <link rel="icon" type="image/x-icon" href="./favicon.png">
    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
    <link href="./style.css" rel="stylesheet" />
@@ -127,7 +127,7 @@ if (isset($_POST['name'])) {
    <div class="grid grid-cols-3 grid-rows-1 gap-4">
       <div class="card-item">
          <div class="max-w-sm rounded bg-white overflow-hidden shadow-lg">
-            <img class="w-full" src="./card-img//3.jpg" alt="bali">
+            <img class="w-full" src="./card-img//6.jpg" alt="bali">
             <div class="px-6 py-4">
                <div class="font-bold text-xl mb-2">The amazing bali</div>
                <p class="text-gray-700 text-base">
@@ -143,7 +143,7 @@ if (isset($_POST['name'])) {
       </div>
       <div class="card-item">
          <div class="max-w-sm rounded bg-white overflow-hidden shadow-lg">
-            <img class="w-full" src="./card-img//5.jpg" alt="Goa">
+            <img class="w-full" src="./card-img//1.jpg" alt="Goa">
             <div class="px-6 py-4">
                <div class="font-bold text-xl mb-2">Goa</div>
                <p class="text-gray-700 text-base">
@@ -174,7 +174,6 @@ if (isset($_POST['name'])) {
          </div>
       </div>
    </div>
-
 
 
 
@@ -224,12 +223,12 @@ if (isset($_POST['name'])) {
                </label>
                <div class="relative">
                   <select id="pack" name="pack" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                     <option>the sunset</option>
+                     <option>sunset</option>
                      <option>ujjain</option>
                      <option>bali</option>
                      <option>kerala</option>
                      <option>goa</option>
-                     <option>kahsmir</option>
+                     <option>kashmir</option>
                   </select>
                   <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

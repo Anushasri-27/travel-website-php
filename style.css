@@ -13,12 +13,7 @@ body{
     background-attachment: fixed;
     color: black;
 }
-.home-title{
-    color: whitesmoke;
-    text-shadow:1px 1px 10px rgb(157, 72, 172);
-    font-family: 'Ole', cursive;
-    font-size: 50px;
-}
+
 
 .title{
     display: flex;

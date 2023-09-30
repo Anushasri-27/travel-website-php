@@ -4,6 +4,15 @@
     box-sizing: border-box;
 
 }
+body{
+    height: 100vh;
+    background-image: url("./painting-jungle-scene-with-green-plant-green-leafy-plant.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
+}
 .btn-a{
     text-decoration: none;
     display: block;
@@ -46,4 +55,11 @@
 
 .card-item{
     height: fit-content;
+}
+
+.home-title{
+    color: whitesmoke;
+    text-shadow:1px 1px 10px rgb(157, 72, 172);
+    font-family: 'Ole', cursive;
+    font-size: 50px;
 }
